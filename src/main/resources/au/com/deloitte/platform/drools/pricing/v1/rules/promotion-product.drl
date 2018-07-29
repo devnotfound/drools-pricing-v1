@@ -1,0 +1,28 @@
+package au.com.deloitte.platform.drools.pricing.v1.rules
+
+import au.com.deloitte.platform.drools.pricing.v1.fact.*;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+
+/*
+	Promotion On a Product Rule that takes 10% off items with a productId 'a8361037' or 'a8361038' and with department 'ELECTRICAL_EQUIPMENT'
+*/
+
+rule "promotion-on-product"
+
+    when
+    	// Left Hand Side (LHS) is the condition
+        product: Product(
+        	( productId == 'a8361037' || productId == 'a8361038' ),
+        	department == 'ELECTRICAL_EQUIPMENT'
+        )
+    then
+    	// Right Hand Side (RHS) is the code block to execute.
+    	// create a logger
+    	Logger logger = LoggerFactory.getLogger("promotion-on-product");
+    	logger.info ("Fact before applying promotion [{}]", product); 
+    	// Here we take 10% off the basePrice of the Product and insert the OfferPrice into the working memory. 
+    	product.discountedPrice = product.basePrice - ( product.basePrice * 0.1 );
+    	logger.info ("Fact after  applying promotion [{}]", product);
+
+end

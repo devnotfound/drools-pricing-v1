@@ -1,0 +1,6 @@
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="http://www.drools.org/xsd/kmodule">
+  <kbase name="defaultKieBase" default="true" eventProcessingMode="cloud" equalsBehavior="identity" declarativeAgenda="disabled" scope="javax.enterprise.context.ApplicationScoped" packages="au.com.deloitte.platform.drools.pricing.v1.rules">
+    <ksession name="defaultStatelessKieSession" type="stateless" default="true" clockType="realtime" beliefSystem="simple" scope="javax.enterprise.context.ApplicationScoped"/>
+  </kbase>
+</kmodule>
