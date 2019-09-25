@@ -149,10 +149,3 @@ public void testPromotionASuccess() {
 {% endhighlight %}
 
 Drools provides a lot of conditional elements (e.g. collect()) using which you can define more complex LHS but for the sake of this demo, I've kept things simple. 
-
-Authoring a Promotion Rule like this one looks promising but it’s certainly not scalable when you have to author a million of these promotions running concurrently in your organisation. 
-
-...Drools Compiler to the rescue but we'll discuss that in Chapter 2. 
-
-The source code can be found [__here__](https://github.com/devendra0008/drools-pricing-v1).
-
